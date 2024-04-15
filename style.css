@@ -1,0 +1,183 @@
+@font-face {
+    font-family: 'Hooskai Chamfered Square';
+    src: url('./fonts/HooskaiChamferedSquare.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Neue Machina';
+    src: url('./fonts/PPNeueMachina-Light.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Halvar';
+    src: url('./fonts/HalvarBreit-Lt.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Neue Machina', sans-serif;
+    color: #fff;
+    background-color: #000;
+  }
+
+@media (max-width: 768px) {
+    body, html {
+        font-size: 14px;
+    }
+
+    #about {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    nav {
+        padding-right: 20px;
+    }
+
+    main .intro h1 {
+        font-size: 64px;
+    }
+}
+
+
+
+#about {
+    background-image: url(./images/about-background.jpg);
+    background-size: cover;
+    height: 100vh;
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows: repeat(12, auto);
+    padding-right: 360px;
+    padding-left: 360px;
+    position: relative;
+    overflow: hidden;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-row: 1;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding-right: 360px;
+    padding-top: 20px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+
+nav .logo{
+    grid-column: 1;
+    background-color: #9851D1;
+    width: 63px;
+    height: 51px;
+    display: flex;
+    align-items: center;
+    font-family: 'Hooskai Chamfered Square';
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 36.81px;
+    color: #9851D1;
+    text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000; /* Эффект обводки для остальных браузеров */
+}
+
+nav .logo .logo-content{
+    padding-left: 1px;
+}
+
+
+nav .logo::before{
+    content: 'TK';
+    left: -1px;
+    position: absolute;
+    color: black;
+    z-index: 1;
+    text-shadow: none;
+}
+
+nav ul:nth-child(2) {
+    grid-column: 6 / 6;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 20px;
+}
+
+main {
+    grid-row: 6 / -1;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    text-align: left;
+    margin: 0;
+    padding: 0;
+}
+
+main .intro h1 {
+    font-size: 128px;
+    font-weight: 400;
+    font-family: 'Hooskai Chamfered Square';
+    color: black;
+    position: relative;
+    text-shadow: 
+    -1px -1px 0 #9851D1,  
+     1px -1px 0 #9851D1,
+    -1px 1px 0 #9851D1,
+     1px 1px 0 #9851D1;
+    padding: 0;
+    margin: 0;
+}
+
+main .intro h1::before {
+    content: 'PORTFOLIO';
+    position: absolute;
+    left: -7px;
+    top: -5px;
+    color: #9851D1;
+    z-index: 1;
+    text-shadow: none;
+}
+
+main .intro p{
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    margin-top: 30px;
+    width: 58%;
+    font-family: 'Halvar';
+}
+
+#about img{
+    grid-column: 8 / 9;
+    grid-row: 6;
+    width: 632px;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+}
