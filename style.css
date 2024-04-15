@@ -115,6 +115,28 @@ nav a {
     font-size: 2vh;
     font-weight: 700;
     margin: 0 20px;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #9851D1;
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #9851D1;
+    left: 50%;
+    bottom: -5px;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+    left: 0;
 }
 
 .intro {
@@ -180,13 +202,13 @@ nav a {
 }
 
 #about button {
-    grid-row: 9;
+    grid-row: 10;
     grid-column: 3;
     position: relative;
     border-radius: 50%;
     width: 10vh;
     height: 10vh;
-    background-color: rgba(152,80,209,0.17);
+    background-color: rgba(152,80,209,0.5);
     border: 1px solid rgba(78,41,107,1);
     border-radius: 50%;
     display: flex;
@@ -224,6 +246,7 @@ nav a {
     transform: rotateY(180deg); /* Переворот на 180 градусов */
     color: white;
     font-size: 2vh;
+    font-family: 'Halvar';
 }
 
 /* Стили для кнопки при наведении - переворачивание */
