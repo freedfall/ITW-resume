@@ -1,4 +1,8 @@
-@font-face {
+
+/****************
+ ****  FONTS ****
+ ****************/
+font-face {
     font-family: 'Hooskai Chamfered Square';
     src: url('./fonts/HooskaiChamferedSquare.ttf') format('truetype');
     font-weight: normal;
@@ -27,7 +31,13 @@ body, html {
     color: #fff;
     background-color: #000;
   }
+html{
+    scroll-behavior: smooth;
+}
 
+/****************
+ ****  ABOUT ****
+ ****************/
 #about {
     background-image: url(./images/about-background.jpg);
     background-size: cover;
@@ -42,10 +52,6 @@ body, html {
     overflow: hidden;
 }
 
-header {
-    margin: 0 20% 0 20%;
-}
-
 nav {
     display: grid;
     grid-template-columns: repeat(12, auto);
@@ -53,9 +59,20 @@ nav {
     align-items: center;
     position: fixed;
     width: 60%;
-    z-index: 1000;
-    margin: 0 20% 0 0;
-    padding-top: 4%;
+    z-index: 3;
+    padding: 0.5% 0 0.5% 0; 
+}
+
+nav::after{
+    content: '';
+    position: absolute;
+    transform: translateX(-50%); 
+    width: 500%;
+    height: 120%;
+    background-color: rgba(31, 31, 31, 0.63);
+    z-index: -1;
+    border-bottom: 1px solid rgba(152, 80, 209, 0.7);
+
 }
 
 nav ul:nth-child(2) {
@@ -65,12 +82,27 @@ nav ul:nth-child(2) {
 nav ul {
     display: grid;
     grid-template-columns: repeat(12, auto);
-    /* justify-content: space-between; */
     list-style: none;
 }
 
 nav ul li {
     padding-left: 60px;
+}
+
+/* Logo flip animation */
+@keyframes fadeInRotate {
+    0% {
+        opacity: 0;
+        transform: rotateX(90deg);
+    }
+    50% {
+        opacity: 0.5;
+        transform: rotateX(180deg);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 nav .logo{
@@ -84,17 +116,17 @@ nav .logo{
     font-weight: 800;
     line-height: 36.81px;
     color: #9851D1;
-    text-shadow: 
+    text-shadow: /* outline effect for text */
     -1px -1px 0 #000,  
      1px -1px 0 #000,
     -1px 1px 0 #000,
-     1px 1px 0 #000; /* Эффект обводки для остальных браузеров */
+     1px 1px 0 #000;
+    animation: fadeInRotate .8s ease-out forwards;
 }
 
 nav .logo .logo-content{
     padding-left: 1px;
 }
-
 
 nav .logo::before{
     content: 'TK';
@@ -104,10 +136,6 @@ nav .logo::before{
     z-index: 1;
     text-shadow: none;
 }
-
-/* nav ul:nth-child(2) {
-    grid-column: 6 / 6;
-} */
 
 nav a {
     color: #fff;
@@ -144,11 +172,21 @@ nav a:hover::after {
     grid-column: 1 / -1;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     text-align: left;
     margin: 0;
     padding: 0;
+}
+
+@keyframes fadeInSlideUp {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 #about h1 {
@@ -167,6 +205,8 @@ nav a:hover::after {
     margin: 0;
     grid-row: 5;
     grid-column: 1 / -1;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    user-select: none;
 }
 
 #about h1::before {
@@ -188,6 +228,9 @@ nav a:hover::after {
     font-family: 'Halvar';
     grid-row: 7 / -1;
     grid-column: 1 / -1;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    user-select: none;
+    cursor: default;
 }
 
 #about img{
@@ -215,14 +258,16 @@ nav a:hover::after {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    perspective: 1000px; /* Добавляет перспективу для 3D-эффекта */
+    perspective: 1000px; /* 3D perspective */
+    animation: fadeInSlideUp 1s ease-out forwards;
+
 }
 
 #about button img {
     width: 100%;
 }
 
-/* Стили для лицевой и обратной стороны кнопки */
+/* front and back styles */
 #about button .front, #about button .back {
     position: absolute;
     width: 100%;
@@ -235,29 +280,240 @@ nav a:hover::after {
     transition: transform 0.3s;
 }
 
-/* Стили для лицевой стороны */
+/* front side style */
 #about button .front {
     background-color: rgba(152,80,209,0.17);
 }
 
-/* Стили для обратной стороны */
+/* back side styles */
 #about button .back {
     background-color: rgba(152,80,209,0.17);
-    transform: rotateY(180deg); /* Переворот на 180 градусов */
+    transform: rotateY(180deg);
     color: white;
     font-size: 2vh;
     font-family: 'Halvar';
 }
 
-/* Стили для кнопки при наведении - переворачивание */
 #about button:hover .front {
-    transform: rotateY(-180deg); /* Переворачиваем лицевую сторону */
+    transform: rotateY(-180deg); /* flip front side */
 }
 
 #about button:hover .back {
-    transform: rotateY(0deg); /* Возвращаем обратную сторону */
+    transform: rotateY(0deg); /* return */
 }
 
 #about button:hover {
-    box-shadow: 0 0 20px rgba(152, 80, 209, 1); /* Яркая подсветка с рассеиванием */
+    box-shadow: 0 0 20px rgba(152, 80, 209, 1);
+}
+
+button a{
+    display: flex;
+    position: absolute;
+    z-index: -1;
+}
+
+
+#skills::before{
+    content: url('./images/glitch.svg');
+    position: absolute;
+    width: 10vh;
+    transform: translateY(-15vh) translateX(75vh);
+    z-index: 2;
+}
+
+/*****************
+ ****  SKILLS ****
+ *****************/
+
+#skills {
+    background-image: url(./images/skills-background.png);
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    padding-right: 20%;
+    padding-left: 20%;
+    position: relative;
+}
+
+#skills h1 {
+    font-size: 12vh;
+    line-height: 150px;
+    font-weight: 400;
+    font-family: 'Hooskai Chamfered Square';
+    color: #9851D1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    grid-row: 2;
+    grid-column: 1 / -1;
+}
+
+#skills .skills-container {
+    grid-row: 4 / -1;
+    grid-column: 1 / -1;
+    display: flex;
+    flex-flow: row;
+    width: 100%;
+    margin-top: 20px;
+}
+
+#skills .cards{
+    display: flex;
+    flex-flow: row;
+    transition: transform 1s ease;
+}
+
+#skills .skill-card {
+    width: 80%;
+    height: 60%;
+    background-color: rgba(31, 31, 31, 0.63);
+    border: 1px solid rgba(78, 41, 107, 1);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    padding: 20px;
+    transition: transform .5s;
+    opacity: 0.5;
+    font-family: 'Halvar';
+    font-weight: 400;
+    margin: 0 40px;
+}
+
+#skills .skill-card h3 {
+    font-size: 2.5vh;
+    margin: 0;
+}
+
+#skills .skill-card h3:hover {
+    color: #9851D1;
+    transition: color 0.3s ease;
+}
+
+#skills .skill-card ul {
+    font-size: 2vh;
+    list-style: none;
+}
+
+#skills .skill-card ul li {
+    position: relative;
+    margin: 5px 0;
+}
+
+#skills .skill-card ul li::before {
+    content: '•';
+    color: #9851D1;
+    position: absolute;
+    left: -20px;
+    top: 0;
+  }
+
+/* Active card - JS part*/
+#skills .skill-card.active {
+    transform: translateY(-30px);
+    box-shadow: 0 0 20px rgba(152, 80, 209, 1);
+    opacity: 1;
+  }
+
+#skills .skills-container button {
+    width: 5vh;
+    height: 5vh;
+    position: absolute;
+    background-color: rgba(78, 41, 107, 1);
+    border-radius: 50%;
+    border: none;
+    top: 50%;
+    cursor: pointer;
+}
+
+#skills .skills-container button img {
+    width: 100%;
+}
+
+#prevBtn {
+    transform: translateY(-50%) translateX(36vh);
+}
+
+#prevBtn img{
+    transform: rotate(90deg);
+}
+
+#nextBtn {
+    transform: translateY(-50%) translateX(38.5vw);
+}
+
+#nextBtn img{
+    transform: rotate(-90deg);
+}
+
+#skills .skills-container button:hover {
+    box-shadow: 0 0 20px rgba(152, 80, 209, 1);
+}
+
+/**********************
+ *****  EDUCATION *****
+ **********************/
+#education{
+    background-size: cover;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    padding-right: 20%;
+    padding-left: 20%;
+    position: relative;
+    overflow: hidden;
+}
+
+#education::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: url('./images/education-background.png') no-repeat center center;
+    background-size: cover;
+    opacity: 0.3;
+    z-index: -1;
+}
+
+#education h1 {
+    font-size: 12vh;
+    line-height: 150px;
+    font-weight: 400;
+    font-family: 'Hooskai Chamfered Square';
+    color: #9851D1;
+    position: relative;
+    padding: 0;
+    margin: 0;
+    grid-row: 3;
+    grid-column: 1 / -1;
+}
+
+#education .education-container {
+    grid-row: 6 / -1;
+    grid-column: 1 / -1;
+    font-family: 'Halvar';
+    font-weight: 400;
+    font-size: 2vh;
+    padding-left: 20px;
+}
+
+#education .education-container img {
+    width: 20%;
+    margin-top: 20px;
+}
+
+#education img {
+    width: 20vw;
+    grid-row: 6 / -1;
+    grid-column: 8 / -1;
+    transition: transform 0.3s;
+}
+
+#education img:hover {
+    transform: translateY(-20px);
 }

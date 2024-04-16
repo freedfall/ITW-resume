@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./JS/carousel.js"></script>
 </head>
 <section>
     <section id="about">
         <header>
             <nav>
-                <div class="logo"><span class="logo-content">TK</span></div>
+                <a href='#about'><div class="logo"><span class="logo-content">TK</span></div></a>
                 <ul>
                 <li><a href="#skills">skills</a></li>
                 <li><a href="#education">education</a></li>
@@ -20,20 +21,74 @@
             </nav>
         </header>
         <h1>PORTFOLIO</h1>
-        <p>Hi! I'm Timur! 21 yo, programmer, student, musician and just a good guy.<br>
+        <p>Hi! I'm Timur: 21 yo, programmer, student, musician and just a good guy.<br>
         Can solve various tasks: from writing a language interpreter to creating a resume web page.</p>
         <div class="scroll-down">
-        <a href="#next-section"><span></span></a>
         </div>
         <button>
             <div class="front">
                 <img src="./images/Arrow_Down.png" alt="arrow">
               </div>
+            <a href="#skills">
               <div class="back">
                 Click!
               </div>
+            </a>
         </button>
         <img src="./images/hero.png" alt="photo" class="photo">
     </section>
+    <section id="skills">
+        <h1>SKILLS:</h1>
+        <div class="skills-container">
+                <div class="cards">
+                    <div class="skill-card">
+                        <h3>Base Knowledge</h3>
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JS</li>
+                            <li>PHP</li>
+                            <li>bash</li>
+                            <li>C++</li>
+                            <li>x86 Assembly</li>
+                            <li>SQL</li>
+                            <li>VHDL</li>
+                        </ul>
+                    </div>
+                <div class="skill-card">
+                    <h3>Advanced Knowledge</h3>
+                    <ul>
+                        <li>C</li>
+                        <li>Python</li>
+                    </ul>
+                </div>
+                <div class="skill-card">
+                    <h3>Soft Skills</h3>
+                    <ul>
+                        <li>Teamwork</li>
+                        <li>Communication</li>
+                        <li>Flexibility</li>
+                        <li>Stress management</li>
+                        <li>Critical thinking</li>
+                    </ul>
+                </div>
+            </div>
+            <button id="prevBtn">
+                <img src="./images/Arrow_Down.png" alt="arrow">
+            </button>
+            <button id="nextBtn">
+                <img src="./images/Arrow_Down.png" alt="arrow">
+            </button>
+        </div>
+    </section>
+    <section id="education">
+        <h1>EDUCATION:</h1>
+        <div class="education-container">
+            <p>Currently in my 3rd year</p>
+            <p>Brno. Czech Republic</p>
+            <p>University: VUT FIT</p>
+            <img src="./images/VUT-logo 1.png" alt="vut">
+        </div>
+        <img src="./images/phone.png" alt="vut on map">
 </body>
 </html>
