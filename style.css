@@ -44,7 +44,7 @@ body::-webkit-scrollbar {
  ****  ABOUT ****
  ****************/
 #about {
-    background-image: url(./images/about-background.jpg);
+    background-image: url(./images/backgrounds/about-background.jpg);
     background-size: cover;
     background-position-x: 70%;
     height: 100vh;
@@ -330,7 +330,7 @@ button a{
     z-index: 1;
 }
 #skills {
-    background-image: url(./images/skills-background.png);
+    background-image: url(./images/backgrounds/skills-background.png);
     background-size: cover;
     height: 100vh;
     display: grid;
@@ -463,7 +463,7 @@ button a{
     background-size: cover;
     height: 100vh;
     display: grid;
-    background-image: url(./images/education-background.jpg);
+    background-image: url(./images/backgrounds/education-background.jpg);
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(12, 1fr);
     padding-right: 20%;
@@ -715,6 +715,56 @@ button a{
     width: 40%;
     z-index: 3;
     transform: translateX(-45%) translateY(-20%);
+}
+
+#contacts {
+    background-size: cover;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./images/backgrounds/footer.jpg);
+    padding-right: 20%;
+    padding-left: 20%;
+    position: relative;
+}
+
+#contacts .contacts-container{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 90%;
+    border-radius:50%;
+    background-color: #9850D1;
+    box-shadow: 0 0 70px rgba(152, 80, 209, 1);
+    transform: translateX(5%);
+}
+#contacts h3 {
+    font-size: 2.7vw;
+    text-align: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+    font-weight: 150;
+    font-family: 'Hooskai Chamfered Square';
+    user-select: none;
+}
+
+#contacts .contacts-images{
+    margin-top: 5%;
+}
+
+#contacts .contacts-images img {
+    margin: 0 1vw;
+    transition: transform 0.3s;
+}
+
+#contacts .contacts-images img:hover {
+    transform: translateY(-10px);
 }
 
 @media screen and (min-width: 1921px) {
