@@ -30,7 +30,6 @@ body, html {
     font-family: 'Neue Machina', sans-serif;
     color: #fff;
     background-color: #000;
-    overflow-x: hidden;
   }
 
 html{
@@ -365,6 +364,7 @@ button a{
     grid-column: 1 / -1;
     display: flex;
     flex-flow: row;
+    position: relative;
     width: 100%;
     margin-top: 20px;
 }
@@ -373,6 +373,7 @@ button a{
     display: flex;
     flex-flow: row nowrap;
     transition: transform 1s ease;
+    display: flex;
 }
 
 #skills .skill-card {
@@ -389,7 +390,7 @@ button a{
     opacity: 0.5;
     font-family: 'Halvar';
     font-weight: 400;
-    margin: 0 40px;
+    margin: 0 2vw;
     backdrop-filter: blur(2px);
 }
 
@@ -430,13 +431,13 @@ button a{
 
 
 #skills .skills-container button {
-    width: 5vh;
-    height: 5vh;
+    width: 3vw;
+    height: 3vw;
     position: absolute;
     background-color: rgba(78, 41, 107, 1);
     border-radius: 50%;
     border: none;
-    top: 50%;
+    top: 25%;
     cursor: pointer;
 }
 
@@ -445,7 +446,7 @@ button a{
 }
 
 #prevBtn {
-    transform: translateY(-50%) translateX(36vh);
+    left: calc(35.5% - 3vw);
 }
 
 #prevBtn img{
@@ -453,11 +454,8 @@ button a{
 }
 
 #nextBtn {
-    transform: translateY(-50%) translateX(38.5vw);
-}
-
-#nextBtn img{
     transform: rotate(-90deg);
+    left: calc(59.5% + 3vw);
 }
 
 #skills .skills-container button:hover {
