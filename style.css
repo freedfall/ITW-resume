@@ -2,7 +2,7 @@
 /****************
  ****  FONTS ****
  ****************/
-font-face {
+@font-face {
     font-family: 'Hooskai Chamfered Square';
     src: url('./fonts/HooskaiChamferedSquare.ttf') format('truetype');
     font-weight: normal;
@@ -207,7 +207,7 @@ nav a:hover::after {
      1px 1px 0 #9851D1;
     padding: 0;
     margin: 0;
-    grid-row: 5;
+    grid-row: 5 / -1;
     grid-column: 1 / -1;
     animation: fadeInSlideUp 1s ease-out forwards;
     user-select: none;
@@ -230,7 +230,7 @@ nav a:hover::after {
     margin-top: 30px;
     width: 58%;
     font-family: 'Halvar';
-    grid-row: 6 / -1;
+    grid-row: 7 / -1;
     grid-column: 1 / -1;
     animation: fadeInSlideUp 1s ease-out forwards;
     user-select: none;
@@ -239,11 +239,11 @@ nav a:hover::after {
 
 #about img{
     grid-column: 6;
-    grid-row: 5;
-    width: 60%;
+    grid-row: 5 / -1;
+    width: 35vw;
     position: absolute;
     z-index: 1;
-    transform: translateY(5%) translateX(10%);
+    transform: translateY(calc(10vh - 5vw)) translateX(10%);
 }
 
 #about button {
@@ -320,20 +320,15 @@ button a{
     z-index: -1;
 }
 
-
-#skills::before{
-    content: url('./images/glitch.svg');
-    position: absolute;
-    width: 30vw;
-    height: 30vh;
-    transform: translateY(-15vh) translateX(38vw);
-    z-index: 1;
-}
-
 /*****************
  ****  SKILLS ****
  *****************/
-
+#skills .glitch {
+    position: absolute;
+    width: 50vw;
+    transform: translateY(calc(-35% - 2vh)) translateX(42vw);
+    z-index: 1;
+}
 #skills {
     background-image: url(./images/skills-background.png);
     background-size: cover;
@@ -391,7 +386,6 @@ button a{
     font-family: 'Halvar';
     font-weight: 400;
     margin: 0 2vw;
-    backdrop-filter: blur(2px);
 }
 
 #skills .skill-card h3 {
@@ -730,5 +724,11 @@ button a{
     #interests h1 {
         font-size: 3vw;
         transform: translateY(10%) rotate(-6deg) translateX(3%);
+    }
+}
+
+@media screen and (min-width: 1367px) and (max-width: 1920px) {
+    #about img {
+        width: 35vw;
     }
 }
