@@ -11,9 +11,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
         cards[Math.floor(totalCards / 2)].classList.add('active');
     }
 
+    function fadeCardInOut(card, fadeOut = true) {
+        if (fadeOut) {
+          card.style.opacity = '0';
+          setTimeout(() => card.style.opacity = '', 50); // Remove inline style for opacity after transition
+        } else {
+          const clone = card.cloneNode(true);
+          clone.style.opacity = '0';
+          card.parentNode.replaceChild(clone, card);
+          setTimeout(() => clone.style.opacity = '', 50); // Fade card in
+        }
+      }
+
     // Function to move card to end or start of container
     function rotateCards(direction) {
-        cardsContainer.style.transition = 'none'; // Disable transition for the reordering action
+        cardsContainer.style.transition = 'transform 0.5s ease';
         if (direction === 'next') {
             // Move the first card to the end
             cardsContainer.appendChild(cards.shift());
@@ -23,12 +35,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             cardsContainer.insertBefore(cards.pop(), cardsContainer.firstChild);
             cards.unshift(cardsContainer.firstElementChild);
         }
-         // Force a reflow
-        void cardsContainer.offsetWidth;
-        // Re-enable transition
-        cardsContainer.style.transition = 'transform 0.5s ease';
+        
         updateActiveClass();
-    }
+        };
 
     document.getElementById('nextBtn').addEventListener('click', function() {
         rotateCards('next');
