@@ -896,6 +896,7 @@ button a{
         justify-content: center;
         align-items: center;
         padding: 0;
+        overflow-y: visible;
     }
     #skills h1 {
         font-size: 10vw;
@@ -909,28 +910,33 @@ button a{
     }
     #skills .cards{
         display: grid;
-        height: 40vh;
-        grid-template-rows: repeat(3, 1fr);
+        height: calc(100% - 20vh);
+        grid-template-rows: repeat(10, auto);
         position: relative;
     }
-    #skills .base{
+    #skills .skill-card.base{
         grid-row: 2;
+        height: 80%;
     }
     #skills .active{
         grid-row: 1;
     }
     #skills .skill-card.active{
         box-shadow: none;
+        transform: none;
+        height: 60%;
     }
-    #skills .soft{
-        grid-row: 3;
+    #skills .skill-card.soft{
+        grid-row: 10;
+        height: 70%;
     }
     #skills .skill-card {
         width: 80%;
-        height: 80%;
+        height: 100%;
         margin: 0 auto;
         border-radius: 20px;
         opacity: 1;
+        grid-column: 1;
     }
     #skills .skill-card ul{
         font-size: 3.5vw;
