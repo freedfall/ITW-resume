@@ -195,7 +195,6 @@ nav a:hover::after {
 
 #about h1 {
     font-size: 6vw;
-    line-height: 150px;
     font-weight: 400;
     font-family: 'Hooskai Chamfered Square';
     color: black;
@@ -343,7 +342,6 @@ button a{
 
 #skills h1 {
     font-size: 12vh;
-    line-height: 150px;
     font-weight: 400;
     font-family: 'Hooskai Chamfered Square';
     color: #9851D1;
@@ -474,7 +472,6 @@ button a{
 
 #education h1 {
     font-size: 12vh;
-    line-height: 150px;
     font-weight: 400;
     font-family: 'Hooskai Chamfered Square';
     color: #9851D1;
@@ -547,7 +544,6 @@ button a{
 
 #interests h1 {
     font-size: 3vw;
-    line-height: 150px;
     font-weight: 400;
     font-family: 'Hooskai Chamfered Square';
     color: #9851D1;
@@ -784,33 +780,35 @@ button a{
     #about{
         height: 100vh;
         width: 100vw;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(8, 1fr);
         grid-template-rows: repeat(12, 1fr);
-        padding: 0 27vw;
-        overflow-x: hidden;
+        padding: 0;
     }
     #about img {
-        width: 100%;
-        grid-row: 6s / -1;
-        grid-column: 1 / 5;
+        width: 130vw;
+        grid-row: 5 / -1;
+        grid-column: 1 / -1;
+        transform: translateX(-15vw);
     }
     #about h1 {
-        font-size: 15vw;
-        line-height: 150px;
+        font-size: 10.6vw;
         grid-row: 2 / -1;
+        grid-column: 2 / -1;
+        margin-top: 10%;
     }
     #about h1::before{
         left: -5px;
     }
     #about p {
-        width: 120%;
+        width: 100%;
         height: 20%;
         grid-row: 3 / -1;
-        font-size: 4.5vw;
+        grid-column: 2 / 8;
+        font-size: 3.5vw;
         font-weight: 200;
         text-align: center;
     }
-    #about button {
+    #about .slider{
         display: none;
     }
 
@@ -822,19 +820,19 @@ button a{
         border: none;
         color: #F3F3F3;
         font-size: 8vw;
+        margin-right: 10vw;
     }
 
     #about nav ul{
         display: none;
-        height: 50vh;
-        width: 80%;
+        height: 90vh;
+        width: 50%;
         position: absolute;
         top: 0;
+        right: 0;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 30% 0;
         margin: 0;
-        transform: translateX(73%);
         background-color: rgba(31, 31, 31, 0.63);
         border: 1px solid rgba(152, 80, 209, 0.7);
         backdrop-filter: blur(10px);
@@ -843,12 +841,20 @@ button a{
     }
 
     #about nav ul li {
-        padding: 5% 0 5% 0;
+        padding: 10% 0 5% 0;
         text-align: left;
     }
 
+    #about nav ul li:nth-child(1){
+        padding-top: 40%;
+    }
+
+    #about .menu {
+        padding-left: 0;
+    }
+
     nav {
-        width: 100vw;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         padding: 2% 0;
@@ -856,13 +862,15 @@ button a{
     }
 
     nav::after{
-        width: 300%;
+        width: 100%;
+        transform: none;
     }
 
     nav .logo {
-        width: 15vw;
-        height: 12vw;
-        font-size: 7vw;
+        width: 11vw;
+        height: 10vw;
+        font-size: 5vw;
+        margin-left: 5vw;
     }
 
     #skills .glitch {
