@@ -910,7 +910,6 @@ button a{
     }
     #skills .cards{
         display: grid;
-        height: calc(100% - 20vh);
         grid-template-rows: repeat(10, auto);
         position: relative;
     }
