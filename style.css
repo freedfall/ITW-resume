@@ -56,6 +56,9 @@ body::-webkit-scrollbar {
     position: relative;
     overflow: hidden;
 }
+#about .burger-btn{
+    display: none;
+}
 
 nav {
     display: grid;
@@ -64,7 +67,7 @@ nav {
     align-items: center;
     position: fixed;
     width: 60%;
-    z-index: 3;
+    z-index: 4;
     padding: 0.5% 0 0.5% 0; 
 }
 
@@ -80,11 +83,8 @@ nav::after{
 
 }
 
-nav ul:nth-child(2) {
-    grid-column: 11 / -1;
-}
-
 nav ul {
+    grid-column: 11 / -1;
     display: flex;
     justify-content: space-between;
     list-style: none;
@@ -246,7 +246,7 @@ nav a:hover::after {
     transform: translateY(calc(10vh - 5vw)) translateX(10%);
 }
 
-#about button {
+#about .slider {
     grid-row: 9;
     grid-column: 3;
     position: relative;
@@ -546,7 +546,7 @@ button a{
 }
 
 #interests h1 {
-    font-size: 3.8em;
+    font-size: 3vw;
     line-height: 150px;
     font-weight: 400;
     font-family: 'Hooskai Chamfered Square';
@@ -768,9 +768,6 @@ button a{
 }
 
 @media screen and (min-width: 1921px) {
-    #skills::before {
-        transform: scale(1.1) translateY(-10vh) translateX(40vw);
-    }
     #interests h1 {
         font-size: 3vw;
         transform: translateY(10%) rotate(-6deg) translateX(3%);
@@ -781,4 +778,96 @@ button a{
     #about img {
         width: 35vw;
     }
+}
+
+@media screen and (max-width: 550px) {
+    #about{
+        height: 154vh;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+        padding: 0 27vw;
+    }
+    #about img {
+        width: 130%;
+        grid-row: 5 / -1;
+        transform: translateX(-12%);
+    }
+    #about h1 {
+        font-size: 15vw;
+        line-height: 150px;
+        grid-row: 2 / -1;
+    }
+    #about h1::before{
+        left: -5px;
+    }
+    #about p {
+        width: 120%;
+        height: 20%;
+        grid-row: 3 / -1;
+        font-size: 4.5vw;
+        font-weight: 200;
+        text-align: center;
+    }
+    #about button {
+        display: none;
+    }
+
+    #about .burger-btn{
+        display: flex;
+        z-index: 5;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #F3F3F3;
+        font-size: 8vw;
+    }
+
+    #about nav ul{
+        display: none;
+        height: 50vh;
+        width: 80%;
+        position: absolute;
+        top: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30% 0;
+        margin: 0;
+        transform: translateX(73%);
+        background-color: rgba(31, 31, 31, 0.63);
+        border: 1px solid rgba(152, 80, 209, 0.7);
+        backdrop-filter: blur(10px);
+        transition: opacity 0.5s ease;
+        opacity: 0;
+    }
+
+    #about nav ul li {
+        padding: 5% 0 5% 0;
+        text-align: left;
+    }
+
+    nav {
+        width: 30%;
+        display: flex;
+        justify-content: space-between;
+        padding: 2% 0;
+        position: fixed;
+    }
+
+    nav::after{
+        width: 300%;
+    }
+
+    nav .logo {
+        width: 15vw;
+        height: 12vw;
+        font-size: 7vw;
+    }
+
+    #skills .glitch {
+        width: 400vw;
+        height: 100vw;
+        transform: translateY(calc(-35% - 8vh)) translateX(-100vw);
+    }
+
 }
