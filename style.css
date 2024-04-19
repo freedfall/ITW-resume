@@ -1000,4 +1000,150 @@ button a{
         grid-row: 8 / -1;
         grid-column: 3 / -1;
     }
+
+    #interests {
+        height: 100vh;
+        width: 100vw;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(8, 1fr);
+        grid-template-rows: repeat(12, 1fr);
+    }
+    #interests h1 {
+        font-size: 8.5vw;
+        grid-row: 10;
+        grid-column: 2 / -1;
+        transform: translateY(-140%) translateX(6%) rotate(-6deg);
+    }
+    #interests h3{
+        font-size: 5vw;
+        width: 100%;
+        transform: none;
+        margin: 0;
+        padding: 0;
+    
+    }
+    #interests p{
+        font-size: 3vw;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #interests .humanitarian{
+        grid-row: 2 / -1;
+        grid-column: 2 / 8;
+        grid: 100%;
+        transform: none;
+        width: 100%;
+    }
+    #interests .photography{
+        grid-row: 3 / -1;
+        grid-column: 2 / 8;
+        grid: 100%;
+        transform: none;
+        width: 100%;
+    }
+    #interests .music{
+        grid-row: 4 / -1;
+        grid-column: 2 / 8;
+        grid: 100%;
+        transform: none;
+        width: 100%;
+    }
+    #interests .travel{
+        grid-row: 5 / -1;
+        grid-column: 2 / 8;
+        grid: 100%;
+        transform: none;
+        width: 100%;
+    }
+    #interests .videogames{
+        grid-row: 6 / -1;
+        grid-column: 2 / 8;
+        grid: 100%;
+        transform: none;
+        width: 100%;
+    }
+    #interests img{
+        width: 100vw;
+        grid-row: 7 / -1;
+        grid-column: 1 / -1;
+        transform: translateY(10%);
+    }
+    #interests .behind{
+        width: 120vw;
+        transform: none;
+        grid-row: 6 / -1;
+        grid-column: 1 / -1;
+        transform: translateY(15%) translateX(-6%);
+    }
+
+    #interests .arrow-interests{
+        grid-row: 1 / -1;
+        grid-column: 1 / -1;
+        width: 35%;
+        transform: translateY(-50%) rotate(-120deg);
+    }
+
+    #interests .arrow-photography {
+        position: absolute;
+        grid-row: 7 / -1;
+        grid-column: 1;
+        width: 35%;
+        z-index: 3;
+        transform: rotate(-70deg) translateX(-20%) translateY(-10%);
+    }
+
+    #interests .arrow-music {
+        position: absolute;
+        grid-row: 7 / -1;
+        grid-column: 6 / -1;
+        width: 65%;
+        z-index: 3;
+        transform: translateX(20%) translateY(10%) rotate(-70deg);
+    }
+
+    #interests .arrow-travel {
+        position: absolute;
+        grid-row: 4 / -1;
+        grid-column: 1 / -1;
+        width: 40%;
+        z-index: 3;
+        transform: translateX(-55%) translateY(-5%) rotate(-5deg);
+    }
+
+    #interests .arrow-videogames {
+        position: absolute;
+        grid-row: 1 / -1;
+        grid-column: 6 / -1;
+        width: 120%;
+        z-index: 3;
+        transform: rotate(50deg) translateX(10%) translateY(-10%);
+    }
+
+    #contacts {
+        height: 60vh;
+        width: 100vw;
+        padding: 0;
+    }
+    #contacts .contacts-container{
+        width: 80%;
+        height: 65%;
+        border-radius: 50%;
+        transform: none;
+    }
+    #contacts h3 {
+        font-size: 8vw;
+        width: 100%;
+    }
+    #contacts .contacts-images {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    #contacts .contacts-images img {
+        width: 10vw;
+        margin: 0 4vw;
+    }
 }
