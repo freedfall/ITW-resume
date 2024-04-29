@@ -2,7 +2,7 @@
 /****************
  ****  FONTS ****
  ****************/
-@font-face {
+ @font-face {
     font-family: 'Hooskai Chamfered Square';
     src: url('./fonts/HooskaiChamferedSquare.ttf') format('truetype');
     font-weight: normal;
@@ -315,13 +315,33 @@ nav a:hover::after {
     box-shadow: 0 0 20px rgba(152, 80, 209, 1);
 }
 
-button a{
+button .back{
     position: absolute;
     display: flex;
     align-items: center;
     width: 100%;
     height: 100%;
     z-index: -1;
+}
+
+#about .header-link{
+    font-size: 6vw;
+    font-weight: 400;
+    font-family: 'Hooskai Chamfered Square';
+    color: black;
+    position: relative;
+    text-shadow: 
+    -1px -1px 0 #9851D1,  
+     1px -1px 0 #9851D1,
+    -1px 1px 0 #9851D1,
+     1px 1px 0 #9851D1;
+    padding: 0;
+    margin: 0;
+    grid-row: 5 / -1;
+    grid-column: 1 / -1;
+    animation: fadeInSlideUp 1s ease-out forwards;
+    user-select: none;
+    text-decoration: none;
 }
 
 /*****************
@@ -383,7 +403,6 @@ button a{
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    align-items: left;
     padding: 20px;
     transition: transform .5s ease, opacity .5s ease;
     opacity: 0.5;
@@ -1036,35 +1055,30 @@ button a{
     #interests .humanitarian{
         grid-row: 2 / -1;
         grid-column: 2 / 8;
-        grid: 100%;
         transform: none;
         width: 100%;
     }
     #interests .photography{
         grid-row: 3 / -1;
         grid-column: 2 / 8;
-        grid: 100%;
         transform: none;
         width: 100%;
     }
     #interests .music{
         grid-row: 4 / -1;
         grid-column: 2 / 8;
-        grid: 100%;
         transform: none;
         width: 100%;
     }
     #interests .travel{
         grid-row: 5 / -1;
         grid-column: 2 / 8;
-        grid: 100%;
         transform: none;
         width: 100%;
     }
     #interests .videogames{
         grid-row: 6 / -1;
         grid-column: 2 / 8;
-        grid: 100%;
         transform: none;
         width: 100%;
     }
